@@ -53,9 +53,4 @@ form{
 form div{
   margin: 10px;
 }
-h2 {
-  text-align: center;
-  font-size: 64px;
-  color:white;
-}
 </style>

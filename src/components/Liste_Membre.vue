@@ -38,7 +38,5 @@ table {
 table, th, td {
   border: 1px solid #f8f2f2;
 }
-h2 {
-  font-size: 64px;
-}
+
 </style>
