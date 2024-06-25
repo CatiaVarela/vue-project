@@ -1,5 +1,5 @@
 <template>
-<h2>Liste des membres</h2>
+<h2 class="title">Liste des membres</h2>
   <table>
     <thead>
       <tr>
@@ -12,31 +12,34 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>{{ props.membre.prenom }}</td>
-        <td>{{ props.membre.nom }}</td>
-        <td>{{ props.membre.tel }}</td>
-        <td>{{ props.membre.mail }}</td>
-        <td>{{ props.membre.poste }}</td>
-        <td>{{ props.membre.annee }}</td>
+      <tr v-for = "membres in membre">
+        <td>{{ membre.prenom }}</td>
+        <td>{{membre.nom }}</td>
+        <td>{{ membre.tel }}</td>
+        <td>{{ membre.mail }}</td>
+        <td>{{ membre.poste }}</td>
+        <td>{{ membre.annee }}</td>
       </tr>
     </tbody>
   </table>
 </template>
 
-<script setup>
-const props = defineProps(['membre']);
+<script>
+//const props = defineProps(['membre']);
+import Creation_Membre from "@/components/Creation_Membre.vue";
 
 </script>
 
 <style scoped>
+
 table {
   border-collapse: collapse;
-
+  width:100%;
 }
 
 table, th, td {
   border: 1px solid #f8f2f2;
+  text-align: center;
 }
 
 </style>

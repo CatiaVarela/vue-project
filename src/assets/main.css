@@ -1,0 +1,7 @@
+@import "../../node_modules/bulma/bulma.scss";
+h2{
+    text-align: center;
+}
+.routeur {
+    color: black;
+}

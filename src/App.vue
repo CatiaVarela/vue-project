@@ -1,56 +1,36 @@
 <template>
 
-<h2> Créer un membre</h2>
-  <form @submit.prevent="soumettreForm">
-    <div class="field is-grouped">
-      <label class="label" for="prenom"> Prénom </label>
-      <input type="text" v-model="prenom" required/>
-
-      <label class="label" for="nom">Nom </label>
-      <input type="text" v-model="nom" required/>
+  <nav class="navbar is-info">
+    <div class="navbar-brand">
+      <div class="navbar-burger" data-target="navbarExampleTransparentExample">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
-
-    <div class="field is-grouped">
-      <label class="label" for="tel">Téléphone </label>
-      <input type="text" v-model="tel" required/>
-
-      <label class="label" for="mail">Mail </label>
-      <input type="text" v-model="mail" required/>
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" ><RouterLink to="/" class="routeur"> Accueil </RouterLink></a>
+        <a class="navbar-item" ><RouterLink to="/creation-membre" class="routeur"> Création de membres </Routerlink></a>
+        <a class="navbar-item" ><RouterLink to="/liste-membre" class="routeur"> Liste des membres </RouterLink></a>
+      </div>
     </div>
-    <div class="field is-grouped">
-      <label class="label" for="poste">Poste </label>
-      <input type="text"  v-model="poste" required/>
-
-      <label class="label" for="annee">Année </label>
-      <input type="text" v-model="annee" required/>
-    </div>
-    <button type="submit" class="button is-primary">Soumettre</button>
-  </form>
-
-  <Liste_Membre :membre = "membre"/>
+  </nav>
+  <main>
+    <RouterView />
+  </main>
 
 </template>
 
-<script setup>
+<script>
 import Liste_Membre from "@/components/Liste_Membre.vue";
-import { reactive } from 'vue';
-const membre = reactive({prenom: 'prenom', nom: 'nom', tel: '', mail: '', poste: '', annee: '2024'});
-
-const soumettreForm = () => {
-  console.log(membre);
+import Creation_Membre from "@/components/Creation_Membre.vue";
+export default {
+  name: 'App',
+  components: {Creation_Membre,Liste_Membre},
 }
-
 </script>
 
 <style scoped>
 
-form{
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  margin: auto;
-}
-form div{
-  margin: 10px;
-}
 </style>
