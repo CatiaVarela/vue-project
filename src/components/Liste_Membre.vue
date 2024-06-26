@@ -1,6 +1,8 @@
 <template>
+  <br>
   <h2 class="title">Liste des membres</h2>
-  <table>
+  <br>
+  <table class="table is-bordered is-striped is-narrow is-fullwidth">
     <thead>
       <tr>
         <th>Nom</th>
@@ -44,14 +46,10 @@ export default {
 
 <style scoped>
 
-table {
-  border-collapse: collapse;
-  width:100%;
-}
-
 table, th, td {
   border: 1px solid #f8f2f2;
   text-align: center;
+  background-color: rgba(23, 177, 204, 0.03);
 }
 
 </style>
