@@ -31,7 +31,7 @@
 </template>
 
 <script >
-import { reactive } from 'vue';
+//import { reactive } from 'vue';
 
 export default {
   data() {
@@ -67,7 +67,6 @@ export default {
 <style scoped>
 
 form{
-  margin: 20px;
   padding: 10px;
   border: 1px solid #f8f2f2;
   border-radius: 10px;
