@@ -3,8 +3,8 @@
   <table>
     <thead>
       <tr>
-        <th>Prénom</th>
         <th>Nom</th>
+        <th>Prénom</th>
         <th>Téléphone</th>
         <th>Mail</th>
         <th>Poste</th>
@@ -13,8 +13,8 @@
     </thead>
     <tbody>
       <tr v-for = "membre in membres">
-        <td>{{ membre.prenom }}</td>
-        <td>{{membre.nom }}</td>
+        <td>{{ membre.nom }}</td>
+        <td>{{membre.prenom }}</td>
         <td>{{ membre.tel }}</td>
         <td>{{ membre.mail }}</td>
         <td>{{ membre.poste }}</td>
@@ -25,20 +25,19 @@
 </template>
 
 <script>
-import Creation_Membre from "@/components/Creation_Membre.vue";
-Creation_Membre.methods.submit()
+//import Creation_Membre from "@/components/Creation_Membre.vue";
+
 export default {
-  components: {
+  /*components: {
     Creation_Membre
-  },
+  },*/
   data() {
     return {
       membres: []
     }
   },
   created() {
-    const nouveauMembre = localStorage.getItem('membres');
-    this.membres.push(JSON.parse(nouveauMembre));
+    this.membres = JSON.parse(localStorage.getItem('membres'));
   }
 }
 </script>

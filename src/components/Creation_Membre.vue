@@ -32,6 +32,7 @@
 
 <script >
 import { reactive } from 'vue';
+
 export default {
   data() {
     return {
@@ -48,9 +49,14 @@ export default {
   methods: {
     submit() {
       //this.$emit('submit', this.membre);
-      console.log( this.membre);
+      let membres = [];
+       membres = JSON.parse(localStorage.getItem('membres'));
+      if (this.membre) {
+        membres.push(this.membre);
+      }
+      localStorage.setItem('membres', JSON.stringify(membres));
 
-      localStorage.setItem('membres', JSON.stringify(this.membre));
+      console.log(this.membre);
     }
     }
 }
