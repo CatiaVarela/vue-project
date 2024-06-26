@@ -1,5 +1,5 @@
 <template>
-<h2 class="title">Liste des membres</h2>
+  <h2 class="title">Liste des membres</h2>
   <table>
     <thead>
       <tr>
@@ -12,7 +12,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for = "membres in membre">
+      <tr v-for = "membre in membres">
         <td>{{ membre.prenom }}</td>
         <td>{{membre.nom }}</td>
         <td>{{ membre.tel }}</td>
@@ -25,9 +25,22 @@
 </template>
 
 <script>
-//const props = defineProps(['membre']);
 import Creation_Membre from "@/components/Creation_Membre.vue";
-
+Creation_Membre.methods.submit()
+export default {
+  components: {
+    Creation_Membre
+  },
+  data() {
+    return {
+      membres: []
+    }
+  },
+  created() {
+    const nouveauMembre = localStorage.getItem('membres');
+    this.membres.push(JSON.parse(nouveauMembre));
+  }
+}
 </script>
 
 <style scoped>

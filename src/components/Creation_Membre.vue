@@ -8,22 +8,22 @@
       <input type="text" v-model="membre.nom" />
 
       <label class="label" for="prenom"> Prénom </label>
-      <input type="text" v-model="prenom" />
+      <input type="text" v-model="membre.prenom" />
     </div>
 
     <div class="field is-grouped">
       <label class="label" for="tel">Téléphone </label>
-      <input type="text" v-model="tel" />
+      <input type="text" v-model="membre.tel" />
 
       <label class="label" for="mail">Mail </label>
-      <input type="text" v-model="mail" />
+      <input type="text" v-model="membre.mail" />
     </div>
     <div class="field is-grouped">
       <label class="label" for="poste">Poste </label>
-      <input type="text"  v-model="poste" />
+      <input type="text"  v-model="membre.poste" />
 
       <label class="label" for="annee">Année </label>
-      <input type="number" v-model="annee" />
+      <input type="number" v-model="membre.annee" />
     </div>
     <button type="submit" class="button is-info">Soumettre</button>
   </form>
@@ -46,10 +46,13 @@ export default {
     }
   },
   methods: {
-    async submit() {
-      console.log( this.$emit('submit', this.membre));
+    submit() {
+      //this.$emit('submit', this.membre);
+      console.log( this.membre);
+
+      localStorage.setItem('membres', JSON.stringify(this.membre));
     }
-  }
+    }
 }
 //const membre = reactive({prenom: 'prenom', nom: 'nom', tel: '', mail: '', poste: '', annee: '2024'});
 

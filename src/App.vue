@@ -13,6 +13,7 @@
         <a class="navbar-item" ><RouterLink to="/" class="routeur"> Accueil </RouterLink></a>
         <a class="navbar-item" ><RouterLink to="/creation-membre" class="routeur"> Création de membres </Routerlink></a>
         <a class="navbar-item" ><RouterLink to="/liste-membre" class="routeur"> Liste des membres </RouterLink></a>
+        <RouterLink to="/test">Test</RouterLink>
       </div>
     </div>
   </nav>
@@ -25,9 +26,10 @@
 <script>
 import Liste_Membre from "@/components/Liste_Membre.vue";
 import Creation_Membre from "@/components/Creation_Membre.vue";
+import Test from "@/components/Test.vue";
 export default {
   name: 'App',
-  components: {Creation_Membre,Liste_Membre},
+  components: {Creation_Membre,Liste_Membre,Test},
 }
 </script>
 
