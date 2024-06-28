@@ -40,7 +40,7 @@ export default {
   },
   created() {
     this.membres = JSON.parse(localStorage.getItem('membres'));
-  }
+  },
 }
 </script>
 
